@@ -10,7 +10,22 @@
 			<link rel="stylesheet" href="assets/css/noscript.css" />
 		</noscript>
 	</head>
+	 <script>
+	        function getCurrentMonthAndYear() {
+	            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	            const currentDate = new Date();
+	            return `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+	        }
 
+		 function getCurrentYear() {
+	            return new Date().getFullYear();
+	        }
+	
+	        window.onload = function() {
+	            document.getElementById('currentDate').textContent = getCurrentMonthAndYear();
+		document.getElementById('currentYear').textContent = getCurrentYear();
+	        };
+	    </script>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -60,7 +75,7 @@
 				<article class="post featured">
 
 					<header class="major">
-						<span class="date">September, 2022</span>
+						<span class="date" id="currentDate"></span>
 						<h2><a href="#">TECHNOLOGY<br />
 								EXCITES ME</a></h2>
 						<p>Immigrant from Vietnam. Studying Computer Science at the University of Houston. <br />
@@ -194,7 +209,7 @@
 			<!-- Copyright -->
 			<div id="copyright">
 				<ul>
-					<li>&copy; Cong Nguyen 2022</li>
+					<li>&copy; Cong Nguyen <span id="currentYear"></span></li>
 					<!-- <li>Design: <a href="https://html5up.net">HTML5 UP</a></li> -->
 				</ul>
 			</div>
